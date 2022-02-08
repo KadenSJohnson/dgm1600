@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color:#ffffff
+}
+
+body {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #13243e;
+}
+
+header {
+    text-align: center;
+}
+
+header img { 
+    height: 90px; 
+}
+
+main {
+   
+}
+
+section {
+    margin: 2rem 0;
+}
+
+#bio {
+display: flex; 
+}
+
+#name-date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: larger;
+}
+
+#bio-choose {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: .5rem;
+}
+
+#choose-list {
+    padding: 1rem;
+    background-color: #888888;
+}
+
+#choose-list h4 {
+    margin-bottom: 1rem;
+}
+
+figure img{
+    height: 10rem;
+}
+
+
+figure {
+    width: 10rem;
+    text-align: center;
+    font-size: small;
+}
+
+figcaption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: .5rem;
+  position: relative;
+  top: -1.5rem;
+}
+
+#tech {
+display: flex;
+justify-content: space-between;
+}
+
+
+
+#interest h2{
+    margin-bottom: 1rem;
+}
+
+
+
+#copyright {
+    color: rgb(50, 50, 205);
+    background-color: chartreuse;
+}
+
+.greyBox {
+    background-color: #888888;
+    padding: 1rem;
+}
+
+.greyBox p {
+    margin-top: .75rem;
+}
+
+h2, h4  {
+    color: #c0f0ff;
+}
+
