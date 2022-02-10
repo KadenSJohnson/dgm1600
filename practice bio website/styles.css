@@ -1,13 +1,13 @@
 * {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color:#ffffff
+    color:#F6FFF8
 }
 
 body {
     width: 960px;
     margin: 0 auto;
-    background-color: #13243e;
+    background-color: #211E1C;
 }
 
 header {
@@ -47,11 +47,15 @@ display: flex;
 
 #choose-list {
     padding: 1rem;
-    background-color: #888888;
+    background-color: #463F3A;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #choose-list h4 {
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 figure img{
@@ -86,12 +90,14 @@ justify-content: space-between;
 
 
 #copyright {
-    color: rgb(50, 50, 205);
-    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    
 }
 
 .greyBox {
-    background-color: #888888;
+    background-color: #463F3A;
     padding: 1rem;
 }
 
@@ -99,7 +105,7 @@ justify-content: space-between;
     margin-top: .75rem;
 }
 
-h2, h4  {
-    color: #c0f0ff;
-}
 
+h2 , h4 {
+    color: #bcb8b1;
+}
