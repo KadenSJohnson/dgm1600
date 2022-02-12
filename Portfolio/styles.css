@@ -1,0 +1,47 @@
+:root {
+    --main-green: #3C4940;
+    --main-white: #DEE1E4;
+    --main-grey: #A0A3A6;
+    --main-black: #111A19;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--main-green);
+}
+
+.navlist :hover{
+    background-color: var(--main-black);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    padding: 1.5rem;
+}
+
+#welcome-section {
+    background-color: var(--main-white);
+    text-align: center;
+    height: 100vh;
+}
+
+figure {
+    margin: 2rem;
+    background-color: var(--main-black)
+}
