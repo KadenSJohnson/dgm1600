@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+section {
+    background-color: var(--main-grey);
+}
+
 a {
     text-decoration: none;
     color: var(--main-white);
@@ -20,6 +24,9 @@ a {
     display: flex;
     justify-content: flex-end;
     background-color: var(--main-green);
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .navlist :hover{
@@ -36,12 +43,22 @@ li {
 }
 
 #welcome-section {
-    background-color: var(--main-white);
-    text-align: center;
-    height: 100vh;
+    background-color: var(--main-white); 
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
 }
 
 figure {
     margin: 2rem;
     background-color: var(--main-black)
 }
+
+
+@media (max-width: 75em) {
+    html {
+      font-size: 80%;
