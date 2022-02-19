@@ -101,6 +101,9 @@ figcaption {
     text-align: center;
     border-radius: 10px;
     background-color: var(--main-green);
+    position: relative;
+    top: -2.5rem;
+    
 }
 
 figcaption:hover {
