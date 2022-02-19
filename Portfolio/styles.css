@@ -9,13 +9,15 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Work Sans', sans-serif;
 }
 
-section {
-    background-color: var(--main-grey);
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-a {
+#projects a {
     text-decoration: none;
     color: var(--main-white);
 }
@@ -31,6 +33,13 @@ a {
 
 .navlist :hover{
     background-color: var(--main-black);
+}
+
+.navlist a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--main-white);
+    font-size: large;
 }
 
 ul {
@@ -49,15 +58,75 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
+    font-size: 10vh;
 }
+
+#projects {
+    background-color: var(--main-white);
+    text-align: center;
+    font-size: 3vh;
+}
+
+.project-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contact {
+    background-color: var(--main-white);
+}
+
+#contact a {
+    text-decoration: none;
+    color: var(--main-black);
+}
+
+#contact h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
 
 figure {
     margin: 2rem;
-    background-color: var(--main-black)
 }
 
+figure img {
+    width: 30rem;
+    border-radius: 10px;
+}
+
+figcaption {
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--main-green);
+}
+
+figcaption:hover {
+    background-color:var(--main-black);
+}
+
+footer {
+    padding: 2rem; 
+    text-align: center;
+    background-color: var(--main-black);
+    color:var(--main-white);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-large;
+}
+
+.contact-details {
+    transition: transform 0.25s ease-in-out;
+}
+
+.contact-details:hover {
+    transform: translateY(8px);
+}
 
 @media (max-width: 75em) {
     html {
