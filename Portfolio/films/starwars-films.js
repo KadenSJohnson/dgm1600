@@ -1,9 +1,29 @@
-console.log('Hello Console!')
+import { films} from '../data/films.js'
 
-let newimage = document.createElement('img')
 
-newimage.src = 'https://starwars-visualguide.com/assets/img/films/6.jpg'
+function getLastNumber(url) {
+    const secondToLastLetter = url[url.length - 2]
+    return secondToLastLetter
+}
 
-let filmlist = document.querySelector('#filmlist') 
+let filmList = document.querySelector('#filmlist') 
 
-filmlist.appendChild(newimage)
+for (let i = 0; i <films.length; i++) {
+    console.log(films[i].url);
+}
+
+let figure = document.createElement('figure')
+let figImage = document.createElement('img')
+let figCaption = document.createElement('figcaption')
+
+let filmNum = getLastNumber(films[i].url)
+
+figImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg`
+
+figCaption.textContent = films[i].title
+
+
+figure.appendChild(figImage)
+figure.appendChild(figCaption)
+
+filmList.appendChild(figure)
