@@ -50,3 +50,45 @@ let secondElement = myArray[1]; //retreive the item at the 1 or second position
 myArray2.length // length property of an array is very handy
 
 let lastItem = myArray2[myArray2.legth -1];
+
+// arrays -hold sets of items of any data type
+
+let myArray = [42, "Bob", myBool, ANSWER, ture];
+
+let secondElement = myArray2[1]; //retreive the item at the 1 or second position of the array 
+
+myArray2.length; // the length property of an array is very handy 
+
+let lastItem = myArray2[myArray2.length - 1];
+
+// objects
+
+let minObject = {};
+
+let myCar = {
+    make: 'chevrolet',
+    color: 'green',
+    year: '1964',
+    vin: '1256195186196846',
+}
+
+myCar.numDoors = 4;
+
+const anotherObject = {
+    wordz: ['foo', 'bar', 'baz'],
+    car: {
+        make: 'McLaren',
+        model: '720'
+    },
+    awesomness: true
+};
+
+// functons 
+
+function myfunction() {
+    return "my greeting to you is what I return to you!"
+}
+
+function sumTwoThings(thingOne, thingTwo) {
+    return thingOne + thingTwo; 
+}
