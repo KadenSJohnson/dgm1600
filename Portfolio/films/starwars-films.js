@@ -1,17 +1,11 @@
 
 import { films } from '../data/films.js';
+import {getLastNumber} from '../utils/index.js'
 
-console.log(films[0].url)
-
-function getLastNumber(url) {
-  const secondToLastLetterOfUrl = url[url.length - 2]
-  return secondToLastLetterOfUrl
-}
 
 let filmList = document.querySelector('#filmlist')
 
 for (let i = 0; i < films.length; i++) {
-
 
 
 let figure = document.createElement("figure")

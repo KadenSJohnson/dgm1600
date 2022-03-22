@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+
+:root {
+    --main-green: #3C4940;
+    --main-white: #DEE1E4;
+    --main-grey: #A0A3A6;
+    --main-black: #111A19;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -19,4 +27,14 @@ figure img {
 
 figcaption {
     text-align: center;
+}
+
+button {
+    width: 10rem;
+    height: 2rem;
+    margin: 1.5rem;
+    background-color: var(--main-green);
+    color: var(--main-white);
+    font-size: large;
+    border-radius: 10px;
 }
