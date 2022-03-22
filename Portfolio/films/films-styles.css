@@ -5,6 +5,13 @@
 }
 
 h1 {
-    color: blue;
+    color: black;
+    text-align: center;
 }
 
+
+
+
+figure {
+    text-align: center;
+}
