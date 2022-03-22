@@ -1,29 +1,32 @@
-import { films} from '../data/films.js'
+"use strict";
+
+import { films } from "../data/films.js";
+
 
 
 function getLastNumber(url) {
-    const secondToLastLetter = url[url.length - 2]
-    return secondToLastLetter
+  const secondToLastLetterOfUrl = url[url.length - 2];
+  return secondToLastLetterOfUrl;
 }
 
-let filmList = document.querySelector('#filmlist') 
-
-for (let i = 0; i <films.length; i++) {
-    console.log(films[i].url);
+let filmList = document.querySelector("#filmlist");
+let i;
+for (i = 0; i < films.length; i++) {
+  
 }
 
-let figure = document.createElement('figure')
-let figImage = document.createElement('img')
-let figCaption = document.createElement('figcaption')
 
-let filmNum = getLastNumber(films[i].url)
+let figure = document.createElement("figure");
+let figImage = document.createElement("img");
+let figCaption = document.createElement("figcaption");
 
-figImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg`
+let filmNum = getLastNumber(films[i].url);
 
-figCaption.textContent = films[i].title
+figImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg`;
 
+figCaption.textContent = films[i].title;
 
-figure.appendChild(figImage)
-figure.appendChild(figCaption)
+figure.appendChild(figImage);
+figure.appendChild(figCaption);
 
-filmList.appendChild(figure)
+filmList.appendChild(figure);
