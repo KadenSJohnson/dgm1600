@@ -7,12 +7,10 @@ const main = document.querySelector('main')
 
 const allCharsButton = document.createElement('button')
 
-
-
 allCharsButton.textContent = 'All Characters'
 allCharsButton.addEventListener('click', function () {
-  populateDOM(people)
-})
+  populateDOM(people)})
+
 
 const maleCharacters = people.filter(person => person.gender === 'male')
 
@@ -21,9 +19,26 @@ maleCharsButton.textContent = 'Males'
 maleCharsButton.addEventListener ('click', () => populateDOM(maleCharacters))
 
 
+const femaleCharacters = people.filter(person => person.gender === 'female')
+
+const femaleCharacter = document.createElement('button')
+femaleCharacter.textContent = 'Females'
+femaleCharacter.addEventListener ('click', () => populateDOM(femaleCharacters))
+
+
+
+const othercharacters = people.filter(person => {
+  return person.gender === 'n/a' || person.gender === 'hermaphrodite' || person.gender === 'none';})
+
+
+const otherCharsButton = document.createElement('button')
+otherCharsButton.textContent = 'Other'
+otherCharsButton.addEventListener ('click', () => populateDOM(othercharacters))
 
 header.appendChild(allCharsButton)
 header.appendChild(maleCharsButton)
+header.appendChild(femaleCharacter)
+header.appendChild(otherCharsButton)
 
 function populateDOM(characters) {
   removeChildren(main)
@@ -43,5 +58,5 @@ function populateDOM(characters) {
     main.appendChild(personFig)})
 }
 
-
+populateDOM(people)
 
