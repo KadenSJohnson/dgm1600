@@ -4,8 +4,33 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-green: #3C4940;
+    --main-white: #DEE1E4;
+    --main-grey: #A0A3A6;
+    --main-black: #111A19;
+}
+
+.box {
+    background-color: var(--main-green);
+    font-size: large;
+    text-align: center;
+}
+
+.nav {
+    min-width: 16rem;
+}
+
+.mainContainer {
+    display: flex;
+}
 
 .navlist {
     list-style-type: none;
     margin: 1rem;
+}
+
+.navlist a{
+    text-decoration: none;
+    color: var(--main-black);
 }

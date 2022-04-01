@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Wars StarShips</title>
     <link rel="stylesheet" href="styles-ships.css">
+    <link
+      rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
 
 </head>
 <body>
@@ -17,9 +19,23 @@
             <ul class="navlist"> 
             </ul>
         </nav>
-        <section class="shipview"></section>
+        <section class="shipview">
+
+        </section>
 
     </main>
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+              <h2 class="shipMessage"></h2>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+    <footer>
+        <h1>Here is my footer</h1>
+    </footer>
     <script src="starwars-ships.js" type="module" defer></script>
 </body>
 </html>
