@@ -1,5 +1,11 @@
 import { senators } from "../data/senators.js";
 
+
+const senatorDiv = document.querySelector('.senatorsDiv')
+const seniorityHead = document.querySelector('.seniority')
+const loyaltyList = document.querySelector('.loyaltyList')
+
+
 function simplifiedSenators() {
     return senators.map(senator => {
       const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
@@ -16,5 +22,38 @@ function simplifiedSenators() {
     })
   }
 
+  const simpleSenators = simplifiedSenators()
 
-console.log(simplifiedSenators())
+
+function populateSenatorDiv(senatorArray) {
+    senatorArray.forEach(senator => {
+        const senFig = document.createElement('figure')
+        const figImg = document.createElement('img')
+        const figCaption = document.createElement('figcaption')
+
+        figImg.src = senator.imgURL
+        figCaption.textContent = senator.name
+
+        senFig.appendChild(figImg)
+        senFig.appendChild(figCaption)
+        senatorDiv.appendChild(senFig)
+    })
+}
+
+populateSenatorDiv(simpleSenators)
+
+const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
+    return acc.seniority > senator.seniority ? acc : senator 
+})
+
+seniorityHead.textContent = `The most senior memeber fo the senate is ${mostSeniorMember.name}`
+
+
+const mostLoyal = simplifiedSenators().map(senator => { 
+   if (senator.loyaltyPct === 100) {
+       let listItem = document.createElement('li')
+       listItem.textContent = senator.name
+       loyaltyList.appendChild(listItem)
+   }
+})
+
