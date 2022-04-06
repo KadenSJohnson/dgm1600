@@ -3,7 +3,7 @@ import { removeChildren, getLastNumber } from "../utils/index.js"
 
 
 const nav = document.querySelector('.nav')
-const navlist = document.querySelector('.navlist')
+const navlist = document.querySelector('.navships')
 const shipview = document.querySelector('.shipview')
 
 const modal = document.querySelector('.modal')

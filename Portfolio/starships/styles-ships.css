@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
 }
 
 :root {
@@ -27,14 +28,69 @@
 
 .mainContainer {
     display: flex;
+    background-color: var(--main-white);
 }
 
-.navlist {
+.shipview {
+    margin: 10rem;
+    border-radius: 10px;
+}
+
+.shipview img {
+    border: solid 5px var(--main-green);
+    border-radius: 10px;
+}
+
+.navships {
     list-style-type: none;
     margin: 1rem;
+    background-color: var(--main-black);
+    border-radius: 10px;
+    margin-top: 10rem;
+    padding-top: 1rem;
 }
 
-.navlist a{
+.navships a{
     text-decoration: none;
-    color: var(--main-black);
+    color: var(--main-white);
+    margin: 1rem 2rem;
+}
+
+#navlist {
+    display: flex;
+    flex-direction: row-reverse;
+    position:absolute; right:2px;
+    list-style: none;
+    background-color:var(--main-green);
+    width: 100%;
+}
+
+#navlist li {
+    padding: 1.5rem;
+}
+
+#navlist a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+#navlist li:hover {
+    background-color: var(--main-black);
+}
+
+header h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 6rem;
+}
+
+header {
+    background-color: var(--main-black);
+    color: var(--main-white);
+}
+
+footer {
+    background-color: var(--main-black);
+    color: var(--main-white);
+    margin: 0 auto;
 }

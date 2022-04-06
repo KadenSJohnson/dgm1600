@@ -16,3 +16,29 @@
     flex-wrap: wrap;
 }
 
+.senatorsDiv figure {
+    margin: 1rem;
+}
+
+.senatorsDiv img {
+    border-radius: 10px;
+}
+
+.loyaltyList {
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    font-size: larger;
+    display: flex;
+    background-color: var(--main-green);
+    justify-content: space-between;
+}
+
+.loyaltyList li {
+    margin: 1rem;
+    color: var(--main-white);
+    list-style-type: none;
+}
+
+.senority {
+    margin-top: 2rem;
+}
