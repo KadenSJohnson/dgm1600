@@ -9,36 +9,130 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: var(--main-white);
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+.members {
+    font-size: 5rem;
+    margin-top: 3.9rem;
 }
 
 .senatorsDiv {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 15rem;
 }
 
 .senatorsDiv figure {
     margin: 1rem;
+    
+}
+
+.senatorsDiv figcaption {
+    text-align: center;
+    background-color: var(--main-green);
+    color: var(--main-white);
+    border-radius: 0px 0px 10px 10px;
+    position: relative; bottom: 5px;
 }
 
 .senatorsDiv img {
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .loyaltyList {
-    margin-bottom: 1rem;
     flex-wrap: wrap;
-    font-size: larger;
+    font-size: 1.5rem;
     display: flex;
-    background-color: var(--main-green);
     justify-content: space-between;
+    margin-bottom: 3rem;
+    font-weight: normal;
+    border-bottom: solid 5px var(--main-black);
+    background-color: var(--main-green);
 }
 
 .loyaltyList li {
     margin: 1rem;
     color: var(--main-white);
     list-style-type: none;
+    background-color: var(--main-green);
 }
 
-.senority {
-    margin-top: 2rem;
+.seniority {
+    padding-top: 2rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    white-space: pre-line;
+    font-weight: normal;
+    background-color: var(--main-white);
+    color: var(--main-black);
+}
+
+
+#infotop {
+    flex-direction: column;
+    display: flex;
+    height: 20vh;
+    background-color: var(--main-green);
+}
+
+.loyalHead {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--main-green);
+    font-weight: normal;
+}
+
+.loyalHead h1 {
+    font-weight: normal;
+    color: var(--main-white);
+}
+
+.vacationerList {
+    text-align: center;
+    font-weight: normal;
+    padding: 1rem 0rem; 
+    border-bottom: solid 5px var(--main-black);
+    background-color: var(--main-white);
+    margin-bottom: 0;
+    color: var(--main-black);
+}
+
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--main-green);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    flex-direction: row;
+    z-index: 100;
+}
+
+.navlist :hover{
+    background-color: var(--main-black);
+}
+
+.navlist a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--main-white);
+    font-size: large;
+    display: flex;
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+.navlist li {
+    padding: 1.5rem;
 }

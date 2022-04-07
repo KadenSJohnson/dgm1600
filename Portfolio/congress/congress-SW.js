@@ -1,10 +1,13 @@
 import { senators } from "../data/senators.js";
+import { representatives } from "../data/representatives.js"
 
+
+const allCongressMembers = [...senators, ...representatives]
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHead = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
-
+const vacationerList = document.querySelector('.vacationerList')
 
 function simplifiedSenators() {
     return senators.map(senator => {
@@ -46,13 +49,20 @@ const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator 
 })
 
-seniorityHead.textContent = `The most senior memeber fo the senate is ${mostSeniorMember.name}`
+
+const biggestMissedVotePct = simplifiedSenators().reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
+const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotePct.missedVotesPct).map(senator => senator.name).join(' and ')
+
+
+seniorityHead.innerHTML = `The most senior memeber fo the senate is <b> ${mostSeniorMember.name}</b>`
+vacationerList.innerHTML = `the members who have missed way to often are <b> ${biggestVacationerList} </b>`
+
 
 
 const mostLoyal = simplifiedSenators().map(senator => { 
    if (senator.loyaltyPct === 100) {
        let listItem = document.createElement('li')
-       listItem.textContent = senator.name
+       listItem.innerHTML = senator.name
        loyaltyList.appendChild(listItem)
    }
 })

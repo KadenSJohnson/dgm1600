@@ -1,8 +1,7 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Work Sans', sans-serif;
+    margin: 0;
 }
 
 :root {
@@ -24,11 +23,14 @@
 
 .nav {
     min-width: 16rem;
+    width: fit-content;
 }
 
 .mainContainer {
     display: flex;
     background-color: var(--main-white);
+    margin: 0;
+    padding: 0;
 }
 
 .shipview {
@@ -39,6 +41,10 @@
 .shipview img {
     border: solid 5px var(--main-green);
     border-radius: 10px;
+    margin: 0 auto;
+    object-fit: fill;
+    width: 80vw;
+    height: auto;
 }
 
 .navships {
@@ -48,13 +54,40 @@
     border-radius: 10px;
     margin-top: 10rem;
     padding-top: 1rem;
+    padding-right: 2rem;
+    width: 20.5rem;
 }
 
 .navships a{
     text-decoration: none;
     color: var(--main-white);
     margin: 1rem 2rem;
+    width: max-content;
 }
+
+.navships a:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#clickme {
+    z-index: 100;
+    color: var(--main-white); 
+    flex-direction: row;
+    background-image: linear-gradient(to top, #111A19, #3C4940);
+    height: max-content;
+    width: 20.5rem;
+    position: absolute; top: 16rem; left: 1rem;
+}
+
+
+#clickme h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    padding-top: 0.75rem;
+    height: max-content;
+}
+
 
 #navlist {
     display: flex;
@@ -72,6 +105,8 @@
 #navlist a {
     text-decoration: none;
     color: var(--main-white);
+    font-size: large;
+    font-weight: lighter;
 }
 
 #navlist li:hover {

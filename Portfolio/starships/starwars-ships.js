@@ -27,7 +27,6 @@ function populateNav() {
         const listItem = document.createElement('li')
         
 
-
         anchor.addEventListener('click', () => populateShipView(starship))
         anchor.appendChild(listItem)
         navlist.appendChild(anchor)
