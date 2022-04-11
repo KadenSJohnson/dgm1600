@@ -8,7 +8,25 @@ const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHead = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
 const vacationerList = document.querySelector('.vacationerList')
+const switchButton = document.querySelector('.switchButton')
 
+function simplifiedReps() {
+  return representatives.map(representative => {
+    const rmiddleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
+    return {
+      id: representative.id,
+      name: `${representative.first_name}${middleName}${representative.last_name}`,
+      imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+    }
+  })
+}
+
+const simpleReps = simplifiedReps
+
+
+
+
+//senators array function
 function simplifiedSenators() {
     return senators.map(senator => {
       const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
@@ -27,7 +45,7 @@ function simplifiedSenators() {
 
   const simpleSenators = simplifiedSenators()
 
-
+//populate dom with senators
 function populateSenatorDiv(senatorArray) {
     senatorArray.forEach(senator => {
         const senFig = document.createElement('figure')
@@ -45,6 +63,8 @@ function populateSenatorDiv(senatorArray) {
 
 populateSenatorDiv(simpleSenators)
 
+
+//top of page info
 const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator 
 })
@@ -67,3 +87,21 @@ const mostLoyal = simplifiedSenators().map(senator => {
    }
 })
 
+
+
+//swith button
+switchButton.addEventListener("click", toggleDeleteButtons)
+
+function toggleDeleteButtons(){
+  for(let button of switchButton){
+    button.classList.toggle("hidden");
+  }
+}
+
+const switchDiv = document.createElement("div")
+
+switchButton = document.createElement("button");
+    switchButton.classList.add("switchButton");
+    switchButton.classList.add("hidden");
+    swithcButton.textContent = "X";
+    switchDiv.appendChild(deleteButton);
