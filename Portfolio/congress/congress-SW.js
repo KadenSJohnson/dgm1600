@@ -8,23 +8,42 @@ const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHead = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
 const vacationerList = document.querySelector('.vacationerList')
-const switchButton = document.querySelector('.switchButton')
+const senatorButton = document.createElement('button')
+
+senatorButton.textContent = 'Switch'
+senatorButton.addEventListener('click',function (){
+  populateSenatorDiv(simpleSenators)})
 
 function simplifiedReps() {
   return representatives.map(representative => {
-    const rmiddleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
+    const middleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
     return {
       id: representative.id,
       name: `${representative.first_name}${middleName}${representative.last_name}`,
       imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+      gender: representative.gender
     }
   })
 }
 
 const simpleReps = simplifiedReps
 
+function populateRepsDiv(repsArray) {
+  repsArray.forEach(representative => {
+    const repFigure = document.createElement('figure')
+    const repImg = document.createElement('img')
+    const repCaption = document.createElement('figcaption')
 
+    repImg.src = representative.imgURL
+    repCaption.textContent = representative.name
 
+    repFigure.appendChild(repImg)
+    repFigure.appendChild(figCaption)
+    senatorDiv.appendChild(repFigure)
+  })
+}
+
+populateRepsDiv(simpleReps)
 
 //senators array function
 function simplifiedSenators() {
@@ -64,6 +83,8 @@ function populateSenatorDiv(senatorArray) {
 populateSenatorDiv(simpleSenators)
 
 
+Header.appendChild(senatorButton)
+
 //top of page info
 const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator 
@@ -87,21 +108,3 @@ const mostLoyal = simplifiedSenators().map(senator => {
    }
 })
 
-
-
-//swith button
-switchButton.addEventListener("click", toggleDeleteButtons)
-
-function toggleDeleteButtons(){
-  for(let button of switchButton){
-    button.classList.toggle("hidden");
-  }
-}
-
-const switchDiv = document.createElement("div")
-
-switchButton = document.createElement("button");
-    switchButton.classList.add("switchButton");
-    switchButton.classList.add("hidden");
-    swithcButton.textContent = "X";
-    switchDiv.appendChild(deleteButton);
