@@ -137,3 +137,13 @@ ul {
     padding: 1.5rem;
 }
 
+.main {
+    margin: 0 auto;
+    display: flex;
+}
+
+.buttons {
+   display: flex;
+   justify-content: center
+
+}

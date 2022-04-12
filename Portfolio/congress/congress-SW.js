@@ -12,7 +12,7 @@ const loyaltyList = document.querySelector('.loyaltyList')
 const vacationerList = document.querySelector('.vacationerList')
 const senatorButton = document.createElement('button')
 const repButton = document.createElement('button')
-const header = document.querySelector('header')
+const buttons = document.querySelector('.buttons')
 
 
 senatorButton.textContent = 'Senators'
@@ -127,5 +127,5 @@ const mostLoyal = simplifiedSenators().map(senator => {
    }
 })
 
-header.appendChild(senatorButton)
-header.appendChild(repButton)
+buttons.appendChild(senatorButton)
+buttons.appendChild(repButton)
