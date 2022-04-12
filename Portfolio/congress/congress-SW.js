@@ -66,6 +66,7 @@ function simplifiedSenators() {
 //populate dom with senators
 function populateSenatorDiv(senatorArray) {
   removeChildren(senatorDiv)
+  removeChildren(repsDiv)
     senatorArray.forEach(senator => {
         const senFig = document.createElement('figure')
         const figImg = document.createElement('img')
@@ -84,7 +85,7 @@ function populateSenatorDiv(senatorArray) {
 
 function populateRepsDiv(simpleReps) {
   removeChildren(repsDiv)
-  console.log(simpleReps)
+  removeChildren(senatorDiv)
   simpleReps.forEach(representative => {
     const repFigure = document.createElement('figure')
     const repImg = document.createElement('img')
@@ -96,8 +97,6 @@ function populateRepsDiv(simpleReps) {
     repFigure.appendChild(repImg)
     repFigure.appendChild(repCaption)
     senatorDiv.appendChild(repFigure)
-
-    console.log(representative.name)
   })
 }
 
