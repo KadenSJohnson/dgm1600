@@ -23,6 +23,8 @@ senatorButton.addEventListener('click',function (){
   repButton.addEventListener('click',function (){
     populateRepsDiv(simpleReps)})
   
+
+
     //Reps array function
     function simplifiedReps() {
       return representatives.map(representative => {
@@ -30,16 +32,17 @@ senatorButton.addEventListener('click',function (){
         return {
           id: representative.id,
           name: `${representative.first_name}${middleName}${representative.last_name}`,
-          imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+          imgURL: `https://www.govtrack.us/static/legislator-photos/${representative.govtrack_id}-200px.jpeg`,
           gender: representative.gender
 
         }
       })
     }
     
-    const simpleReps = simplifiedReps
 
+    const simpleReps = simplifiedReps()
 
+   
 
 //senators array function
 function simplifiedSenators() {
@@ -79,9 +82,10 @@ function populateSenatorDiv(senatorArray) {
 }
 
 
-function populateRepsDiv(repsArray) {
-  removeChildren(senatorDiv)
-  repsArray.forEach(representative => {
+function populateRepsDiv(simpleReps) {
+  removeChildren(repsDiv)
+  console.log(simpleReps)
+  simpleReps.forEach(representative => {
     const repFigure = document.createElement('figure')
     const repImg = document.createElement('img')
     const repCaption = document.createElement('figcaption')
@@ -90,7 +94,7 @@ function populateRepsDiv(repsArray) {
     repCaption.textContent = representative.name
 
     repFigure.appendChild(repImg)
-    repFigure.appendChild(figCaption)
+    repFigure.appendChild(repCaption)
     senatorDiv.appendChild(repFigure)
 
     console.log(representative.name)
