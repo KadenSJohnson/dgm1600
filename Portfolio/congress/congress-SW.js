@@ -23,15 +23,16 @@ senatorButton.addEventListener('click',function (){
   repButton.addEventListener('click',function (){
     populateRepsDiv(simpleReps)})
   
-
+    //Reps array function
     function simplifiedReps() {
       return representatives.map(representative => {
-        const rmiddleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
+        const middleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
         return {
           id: representative.id,
           name: `${representative.first_name}${middleName}${representative.last_name}`,
           imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
           gender: representative.gender
+
         }
       })
     }
@@ -74,9 +75,9 @@ function populateSenatorDiv(senatorArray) {
         senFig.appendChild(figCaption)
         senatorDiv.appendChild(senFig)
 
-        console.log(figCaption)
     })
 }
+
 
 function populateRepsDiv(repsArray) {
   removeChildren(senatorDiv)
@@ -91,6 +92,8 @@ function populateRepsDiv(repsArray) {
     repFigure.appendChild(repImg)
     repFigure.appendChild(figCaption)
     senatorDiv.appendChild(repFigure)
+
+    console.log(representative.name)
   })
 }
 
