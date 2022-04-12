@@ -1,49 +1,44 @@
 import { senators } from "../data/senators.js";
 import { representatives } from "../data/representatives.js"
+import { removeChildren } from "../utils/index.js";
 
 
 const allCongressMembers = [...senators, ...representatives]
 
 const senatorDiv = document.querySelector('.senatorsDiv')
+const repsDiv = document.querySelector('.repsDiv')
 const seniorityHead = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
 const vacationerList = document.querySelector('.vacationerList')
 const senatorButton = document.createElement('button')
+const repButton = document.createElement('button')
+const header = document.querySelector('header')
 
-senatorButton.textContent = 'Switch'
+
+senatorButton.textContent = 'Senators'
 senatorButton.addEventListener('click',function (){
   populateSenatorDiv(simpleSenators)})
 
-function simplifiedReps() {
-  return representatives.map(representative => {
-    const middleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
-    return {
-      id: representative.id,
-      name: `${representative.first_name}${middleName}${representative.last_name}`,
-      imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
-      gender: representative.gender
+  repButton.textContent = 'Representatives'
+  repButton.addEventListener('click',function (){
+    populateRepsDiv(simpleReps)})
+  
+
+    function simplifiedReps() {
+      return representatives.map(representative => {
+        const rmiddleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
+        return {
+          id: representative.id,
+          name: `${representative.first_name}${middleName}${representative.last_name}`,
+          imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+          gender: representative.gender
+        }
+      })
     }
-  })
-}
+    
+    const simpleReps = simplifiedReps
 
-const simpleReps = simplifiedReps
 
-function populateRepsDiv(repsArray) {
-  repsArray.forEach(representative => {
-    const repFigure = document.createElement('figure')
-    const repImg = document.createElement('img')
-    const repCaption = document.createElement('figcaption')
-
-    repImg.src = representative.imgURL
-    repCaption.textContent = representative.name
-
-    repFigure.appendChild(repImg)
-    repFigure.appendChild(figCaption)
-    senatorDiv.appendChild(repFigure)
-  })
-}
-
-populateRepsDiv(simpleReps)
 
 //senators array function
 function simplifiedSenators() {
@@ -66,6 +61,7 @@ function simplifiedSenators() {
 
 //populate dom with senators
 function populateSenatorDiv(senatorArray) {
+  removeChildren(senatorDiv)
     senatorArray.forEach(senator => {
         const senFig = document.createElement('figure')
         const figImg = document.createElement('img')
@@ -77,13 +73,30 @@ function populateSenatorDiv(senatorArray) {
         senFig.appendChild(figImg)
         senFig.appendChild(figCaption)
         senatorDiv.appendChild(senFig)
+
+        console.log(figCaption)
     })
 }
 
-populateSenatorDiv(simpleSenators)
+function populateRepsDiv(repsArray) {
+  removeChildren(senatorDiv)
+  repsArray.forEach(representative => {
+    const repFigure = document.createElement('figure')
+    const repImg = document.createElement('img')
+    const repCaption = document.createElement('figcaption')
+
+    repImg.src = representative.imgURL
+    repCaption.textContent = representative.name
+
+    repFigure.appendChild(repImg)
+    repFigure.appendChild(figCaption)
+    senatorDiv.appendChild(repFigure)
+  })
+}
 
 
-Header.appendChild(senatorButton)
+
+
 
 //top of page info
 const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
@@ -108,3 +121,5 @@ const mostLoyal = simplifiedSenators().map(senator => {
    }
 })
 
+header.appendChild(senatorButton)
+header.appendChild(repButton)
