@@ -137,15 +137,14 @@ ul {
     padding: 1.5rem;
 }
 
-.main {
+main {
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.buttons {
-   display: flex;
-   justify-content: center;
-}
+
 
 .buttons button {
     width: 10rem;
@@ -160,3 +159,18 @@ ul {
 .buttons button:hover {
     background-color: var(--main-black);
 }
+
+#extraSenatorbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+
+}
+
+#mainbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+

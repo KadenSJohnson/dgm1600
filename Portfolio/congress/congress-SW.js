@@ -3,26 +3,59 @@ import { representatives } from "../data/representatives.js"
 import { removeChildren } from "../utils/index.js";
 
 
-const allCongressMembers = [...senators, ...representatives]
-
 const senatorDiv = document.querySelector('.senatorsDiv')
 const repsDiv = document.querySelector('.repsDiv')
 const seniorityHead = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
 const vacationerList = document.querySelector('.vacationerList')
-const senatorButton = document.createElement('button')
-const repButton = document.createElement('button')
 const buttons = document.querySelector('.buttons')
+const extrasenatorbuttons = document.querySelector('#extraSenatorbuttons')
+
+const maleSenatorButton = document.querySelector('.maleSenatorButton')
+const femaleSenatorButton = document.querySelector('.femaleSenatorButton')
+const senatorButton = document.querySelector('.senatorButton')
+
+
+const repButton = document.querySelector('.RepsButton')
+const maleRepButton = document.querySelector('.maleRepsButton')
+const femaleRepButton = document.querySelector('.femaleRepsButton')
 
 
 senatorButton.textContent = 'Senators'
 senatorButton.addEventListener('click',function (){
-  populateSenatorDiv(simpleSenators)})
+  populateSenatorDiv(simpleSenators)
+})
 
-  repButton.textContent = 'Representatives'
-  repButton.addEventListener('click',function (){
-    populateRepsDiv(simpleReps)})
-  
+maleSenatorButton.textContent = 'Male Senators'
+maleSenatorButton.addEventListener('click', function () {
+  let gender = simpleSenators.filter(senator => senator.gender === 'M')
+ populateSenatorDiv(gender)
+  })
+
+
+femaleSenatorButton.textContent = 'Female Senators'
+femaleSenatorButton.addEventListener('click', function () {
+  let gender = simpleSenators.filter(senator => senator.gender === 'F')
+ populateSenatorDiv(gender)
+  })
+
+repButton.textContent = 'Representatives'
+repButton.addEventListener('click',function (){
+  populateRepsDiv(simpleReps)
+})
+
+maleRepButton.textContent = 'Male Representatives'
+maleRepButton.addEventListener('click', function (){
+  let gender = simpleReps.filter(representative => representative.gender === 'M')
+  populateRepsDiv(gender)
+})
+
+
+femaleRepButton.textContent = 'Female Representatives'
+femaleRepButton.addEventListener('click', function (){
+  let gender = simpleReps.filter(representative => representative.gender === 'F')
+  populateRepsDiv(gender)
+})
 
 
     //Reps array function
@@ -127,5 +160,9 @@ const mostLoyal = simplifiedSenators().map(senator => {
    }
 })
 
-buttons.appendChild(senatorButton)
-buttons.appendChild(repButton)
+mainbuttons.appendChild(senatorButton)
+mainbuttons.appendChild(repButton)
+extrasenatorbuttons.appendChild(maleSenatorButton)
+extrasenatorbuttons.appendChild(femaleSenatorButton)
+extrasenatorbuttons.appendChild(maleRepButton)
+extrasenatorbuttons.appendChild(femaleRepButton)
