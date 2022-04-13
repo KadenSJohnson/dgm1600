@@ -28,7 +28,7 @@ senatorButton.addEventListener('click',function (){
     //Reps array function
     function simplifiedReps() {
       return representatives.map(representative => {
-        const middleName = representative.middle_name ? ` ${representative.middle_name} ` : ``
+        const middleName = representative.middle_name ? ` ${representative.middle_name} ` : ` `
         return {
           id: representative.id,
           name: `${representative.first_name}${middleName}${representative.last_name}`,

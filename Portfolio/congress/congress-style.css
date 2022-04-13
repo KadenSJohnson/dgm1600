@@ -12,6 +12,7 @@
     scroll-behavior: smooth;
 }
 
+
 header {
     background-color: var(--main-white);
     text-align: center;
@@ -25,7 +26,6 @@ header {
 .senatorsDiv {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 15rem;
 }
 
 .senatorsDiv figure {
@@ -144,6 +144,19 @@ ul {
 
 .buttons {
    display: flex;
-   justify-content: center
+   justify-content: center;
+}
 
+.buttons button {
+    width: 10rem;
+    height: 48px;
+    margin: 1.5rem;
+    background-color: var(--main-green);
+    color: var(--main-white);
+    font-size: large;
+    border-radius: 10px;
+}
+
+.buttons button:hover {
+    background-color: var(--main-black);
 }
