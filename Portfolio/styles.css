@@ -1,9 +1,18 @@
+
 :root {
     --main-green: #3C4940;
     --main-white: #DEE1E4;
     --main-grey: #A0A3A6;
     --main-black: #111A19;
 }
+
+.darkmode {
+    --main-green: #849A8C;
+    --main-white: #121212;
+    --main-grey: #b5b8ba;
+    --main-black: #B0BFB5;
+    color: #B0BFB5;
+  }
 
 
 * {
@@ -15,7 +24,10 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    
 }
+
+
 
 #projects a {
     text-decoration: none;
@@ -31,6 +43,11 @@ html {
     width: 100%;
     top: 0;
     z-index: 100;
+}
+
+.darkmodetoggle {
+    width: 50px;
+    height: 50px;
 }
 
 .navlist :hover{
