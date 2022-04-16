@@ -43,10 +43,14 @@
 }
 
 .back {
-    background-color: blue;
+    background-color: bisque;
     transform: rotateY(180deg);
 }
 
+.cardFace--back ul, li, h4{
+    text-align: center;
+    list-style: none;
+}
 
 figure img {
     width: 200px;
