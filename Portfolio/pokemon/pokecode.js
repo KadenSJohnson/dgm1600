@@ -25,6 +25,7 @@ class Pokemon {
       (this.weight = weight),
       (this.abilities = abilities),
       (this.types = types);
+      //add held item to pokemon
   }
 }
 
