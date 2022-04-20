@@ -25,6 +25,13 @@
     transition: transform 1s;
     transform-style: preserve-3d;
     position: relative;
+    box-shadow: 1px 4px 10px 4px lightgrey;
+    border-radius: 30px;
+    
+}
+
+.card:hover {
+    transform: scale(1.08);
 }
 
 .cardFace {
@@ -32,6 +39,7 @@
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 15px;
 }
 
 .card.is-flipped {
@@ -39,11 +47,11 @@
 }
 
 .front {
-    background-color: bisque;
+    border: 10px #ffde00 solid;
 }
 
 .back {
-    background-color: bisque;
+    background-image: url('https://i.redd.it/6rfofno9nb811.png');
     transform: rotateY(180deg);
 }
 
@@ -53,9 +61,12 @@
 }
 
 figure img {
-    width: 200px;
+    width: 180px;
+
 }
 
 figcaption {
     text-align: center;
+    font-weight: 700;
+
 }
