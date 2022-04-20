@@ -179,7 +179,7 @@ function getPokeTypeColor(pokeType) {
       color = "#f08030";
       break;
     case "flying":
-      color = "../images/flying-icon.png";
+      color = "#a890f0";
       break;
     case "ghost":
       color = "#705898";
@@ -273,7 +273,7 @@ function getPokeIconType(pokeType) {
 return icon 
 }
 
-await loadPokemon(0, 250);
+await loadPokemon(0, 1000);
 
 function getPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)};
