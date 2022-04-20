@@ -105,8 +105,11 @@ function populatePokeCard(pokemon) {
 function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
   pokeFront.className = "cardFace front";
+  const typeicon = document.createElement('img')
+  typeicon.className = "typeicon"
   const pokeType1 = pokemon.types[0].type.name
   pokeFront.style.setProperty('background', getPokeTypeColor(pokeType1))
+  typeicon.src = getPokeIconType(pokeType1)
   const pokeImg = document.createElement("img");
   if (pokemon.id === 9002) {
     pokeImg.src = "../images/pokeball.png";
@@ -118,6 +121,7 @@ function populateCardFront(pokemon) {
 
   pokeFront.appendChild(pokeImg);
   pokeFront.appendChild(pokeCaption);
+  pokeFront.appendChild(typeicon)
   return pokeFront;
 }
 
@@ -153,7 +157,7 @@ function getPokeTypeColor(pokeType) {
       color = "#7038f8";
       break;
     case "electric":
-      color = "#f8d030";
+      color = "#a1871f";
       break;
     case "fairy":
       color = "#ee99ac";
@@ -165,7 +169,7 @@ function getPokeTypeColor(pokeType) {
       color = "#f08030";
       break;
     case "flying":
-      color = "#a890f0";
+      color = "../images/flying-icon.png";
       break;
     case "ghost":
       color = "#705898";
@@ -198,8 +202,68 @@ function getPokeTypeColor(pokeType) {
   return color
 }
 
+function getPokeIconType(pokeType) {
+  let icon;
+  switch (pokeType) {
+    case "grass":
+      icon = "../images/grass-icon.png";
+      break;
+    case "bug":
+      icon = "../images/bug-icon.webp";
+      break;
+    case "dark":
+      icon = "../images/dark-icon.png";
+      break;
+    case "dragon":
+      icon = "../images/dragon-icon.webp";
+      break;
+    case "electric":
+      icon = "../images/electric-icon.webp";
+      break;
+    case "fairy":
+      icon = "../images/fairy-icon.png";
+      break;
+    case "fighting":
+      icon = "../images/fighting-icon.png";
+      break;
+    case "fire":
+      icon = "../images/fire-icon.webp";
+      break;
+    case "flying":
+      icon = "../images/flying-icon.png";
+      break;
+    case "ghost":
+      icon = "../images/ghost-icon.webp";
+      break;
+    case "ground":
+      icon = "../images/ground-icon.png";
+      break;
+    case "ice":
+      icon = "../images/ice-icon.webp";
+      break;
+    case "normal":
+      icon = "../images/normal-icon.webp";
+      break;
+    case "poison":
+      icon = "../images/poison-icon.webp";
+      break;
+      case "psychic":
+      icon = "../images/psychic-icon.webp";
+      break;
+      case "rock":
+      icon = "../images/rock-icon.png";
+      break;
+      case "steel":
+      icon = "../images/steel-icon.webp";
+      break;
+      case "water":
+      icon = "../images/water-icon.webp";
+      break;
+  }
+return icon 
+}
+
 await loadPokemon(0, 250);
 
 function getPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)};
-
