@@ -59,7 +59,7 @@
     justify-content: flex-start;
 }
 
-.cardFace--back, h4{
+/*.cardFace--back, h4{
     
     justify-content: right;
     display: flex;
@@ -67,9 +67,7 @@
     margin-top: 3.2rem;
     margin-right: 8rem;
     font-size: .85rem;
-  
 }
-
 
 .cardFace--back, li {
     list-style: none;
@@ -87,6 +85,43 @@
     margin-left: .45rem;
     font-size: .65rem;
     font-weight: 5rem;
+}*/
+
+.cardFace--back {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+li {
+    padding: 0 0.15rem ;
+    font-size: .66rem;
+    font-weight: 20rem;
+    /*might want to get a font that is thicker*/
+}
+
+h4 {
+    text-align: center;
+}
+
+.backname {
+    margin-top: 1.75rem;
+    margin-left: 6rem;
+}
+
+.dexsection1 {
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 0.5rem;
 }
 
 .typeicon {
