@@ -52,13 +52,41 @@
 }
 
 .back {
-    background-image: '../images';
+    background-image: url("../images/pokedex-screen.png");
     transform: rotateY(180deg);
+    display: block;
+    flex-direction: column wrap;
+    justify-content: flex-start;
 }
 
-.cardFace--back ul, li, h4{
-    text-align: center;
+.cardFace--back, h4{
+    
+    justify-content: right;
+    display: flex;
+    text-align: right;
+    margin-top: 3.2rem;
+    margin-right: 8rem;
+    font-size: .85rem;
+  
+}
+
+
+.cardFace--back, li {
     list-style: none;
+    justify-content: right;
+    display: flex;
+    text-align: right;
+    margin-right: 0.5rem;
+}
+
+.cardFace--back,ul {
+    justify-content: right;
+    display: flex;
+    text-align: right;
+    margin-right: 2rem;
+    margin-left: .45rem;
+    font-size: .65rem;
+    font-weight: 5rem;
 }
 
 .typeicon {
