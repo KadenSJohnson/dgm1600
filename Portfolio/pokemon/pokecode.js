@@ -333,7 +333,7 @@ return icon
 
 
 
-await loadPokemon(0, 25);
+await loadPokemon(0, 1000);
 
 function getPokemonByType(type1) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type1)};
