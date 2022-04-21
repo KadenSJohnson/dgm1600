@@ -22,27 +22,29 @@ async function loadPokemon(offset = 0, limit = 25) {
       name: pokemon.name,
       types: pokemon.types,
       abilities: pokemon.abilities,
-      //items: pokemon.held_items.slice(0, 2),
+      sprite: pokemon.sprites.back_default,
     };
     loadedPokemon.push(simplePokemon)
     populatePokeCard(simplePokemon);
-    //console.log(pokemon.sprites.back_default)
+
   }
 }
 
 class Pokemon {
-  constructor(name, height, weight, abilities, types) {
+  constructor(name, height, weight, abilities, types, sprite) {
     (this.id = 9002),
       (this.name = name),
       (this.height = height),
       (this.weight = weight),
       (this.abilities = abilities),
       (this.types = types);
+      (this.sprite = sprite)
   }
 }
 
 const newButton = document.createElement("button");
 newButton.textContent = "New Pokemon";
+newButton.className = 'newButton'
 const header = document.querySelector("header");
 header.appendChild(newButton);
 newButton.addEventListener("click", () => {
@@ -57,7 +59,6 @@ newButton.addEventListener("click", () => {
     "Choose the Type(s) for your new pokemon (seperate multiple by a comma)",
     "Normal"
   );
-  //add moves arrray and moves prompt.//
 
   const newPokemon = new Pokemon(
     pokeName,
@@ -69,6 +70,9 @@ newButton.addEventListener("click", () => {
   console.log(newPokemon);
   populatePokeCard(newPokemon);
 });
+
+
+
 
 function makeAbilitiesArray(commaString) {
   return commaString.split(",").map((abilityName) => {
@@ -109,10 +113,17 @@ function populateCardFront(pokemon) {
   const typeicon = document.createElement('img')
   typeicon.className = "typeicon"
   const pokeType1 = pokemon.types[0].type.name
-  /*add pokeType2*/
-  // add back sprites 
+  const iconsection = document.createElement('div')
+  iconsection.className = 'iconsection'
+  const pokesprite = document.createElement('img')
+  pokesprite.src = pokemon.sprite
+  pokesprite.className = "sprite"
   pokeFront.style.setProperty('background', getPokeTypeColor(pokeType1))
   typeicon.src = getPokeIconType(pokeType1)
+  if (pokemon.types[1])
+  {
+    typeicon.src = getPokeIconType(pokemon.types[1].type.name)
+  }
   const pokeImg = document.createElement("img");
   if (pokemon.id === 9002) {
     pokeImg.src = "../images/pokeball.png";
@@ -122,9 +133,13 @@ function populateCardFront(pokemon) {
   const pokeCaption = document.createElement("figcaption");
   pokeCaption.innerHTML = pokemon.name;
 
+  
   pokeFront.appendChild(pokeImg);
   pokeFront.appendChild(pokeCaption);
-  pokeFront.appendChild(typeicon)
+  pokeFront.appendChild(iconsection);
+  
+  iconsection.appendChild(typeicon);
+  iconsection.appendChild(pokesprite);
   return pokeFront;
 }
 
@@ -152,7 +167,18 @@ function populateCardBack(pokemon) {
     typeList2.textContent = `Secondary Type: ${pokemon.types[1].type.name}`
     dexsection4.appendChild(typeList2)
   }
+  const dexsection5 = document.createElement('div')
+  if (pokemon.types[1]) 
+  {
+    dexsection5.className ='dexsection5'
+  }
+  else 
+  {
+    dexsection5.className = 'dexsection52'
+  }
   
+  const pokeIdList = document.createElement('h6')
+  pokeIdList.innerHTML = `Pokemon Number:<br> ${pokemon.id}`
   const label = document.createElement("h4");
   const abilityList = document.createElement("ul");
   const pokeCaption = document.createElement('h4')
@@ -175,8 +201,9 @@ function populateCardBack(pokemon) {
   pokeBack.appendChild(dexsection3)
   dexsection4.appendChild(typelist)
   pokeBack.appendChild(dexsection4)
+  dexsection5.appendChild(pokeIdList)
+  pokeBack.appendChild(dexsection5)
 
-  //add held items to pokedex with pokemon.held_items.slice(0, 2) 
   
 
   return pokeBack;
@@ -306,7 +333,7 @@ return icon
 
 
 
-await loadPokemon(0, 1000);
+await loadPokemon(0, 25);
 
 function getPokemonByType(type1) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type1)};
