@@ -124,6 +124,35 @@ h4 {
     margin-top: 0.5rem;
 }
 
+.dexsection2 {
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+.dexsection3 {
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1.8rem;
+}
+
+.dexsection4 {
+    width: 175px;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-right: -1rem;
+}
+
+
 .typeicon {
     width: 30px;
     height: auto;
