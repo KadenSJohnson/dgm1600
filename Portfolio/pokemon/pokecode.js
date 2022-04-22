@@ -67,7 +67,6 @@ newButton.addEventListener("click", () => {
     makeAbilitiesArray(pokeAbilities),
     makeTypeArray(pokeTypes)
   );
-  console.log(newPokemon);
   populatePokeCard(newPokemon);
 });
 
@@ -127,6 +126,9 @@ function populateCardFront(pokemon) {
   const pokeImg = document.createElement("img");
   if (pokemon.id === 9002) {
     pokeImg.src = "../images/pokeball.png";
+    typeicon.src = "../images/unknown-icon.webp"
+    pokesprite.src = "../images/missing-sprite.webp"
+    pokeFront.style.setProperty('background', '#68a090')
   } else {
     pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
   }
@@ -333,7 +335,7 @@ return icon
 
 
 
-await loadPokemon(0, 1000);
+await loadPokemon(0, 25);
 
 function getPokemonByType(type1) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type1)};
