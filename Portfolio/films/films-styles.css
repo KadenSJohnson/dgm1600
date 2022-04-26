@@ -24,11 +24,17 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
 }
 
 
 figure {
     margin: 2rem;
+    transition: transform 700ms ease-in-out;
+}
+
+figure:hover {
+    transform: scale(1.06);
 }
 
 figcaption {
@@ -76,4 +82,7 @@ ul {
 
 li {
     padding: 1.5rem;
+}
+
+.popped {
 }
