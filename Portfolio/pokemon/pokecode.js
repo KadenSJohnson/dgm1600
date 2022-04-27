@@ -1,3 +1,6 @@
+import { removeChildren } from '../utils/index.js'
+
+
 const getAPIData = async (url) => {
   try {
     const result = await fetch(url);
@@ -42,10 +45,38 @@ class Pokemon {
   }
 }
 
+const pokeGrid = document.querySelector(".pokeGrid");
+
+function populatePokeCard(pokemon) {
+  const pokeScene = document.createElement("div");
+  pokeScene.className = "scene";
+  const pokeCard = document.createElement("div");
+  pokeCard.className = "card";
+  pokeCard.addEventListener("click", () =>
+    pokeCard.classList.toggle("is-flipped")
+  );
+
+  pokeCard.appendChild(populateCardFront(pokemon));
+  pokeCard.appendChild(populateCardBack(pokemon));
+  pokeScene.appendChild(pokeCard);
+  pokeGrid.appendChild(pokeScene);
+}
+
+const header = document.querySelector("#headerbutton");
+const loadButton = document.createElement('button')
+loadButton.className = 'loadbutton'
+loadButton.textContent = 'Load Pokemon'
+header.appendChild(loadButton)
+loadButton.addEventListener('click', async () => {
+  if (loadedPokemon.length === 0) {
+    removeChildren(pokeGrid)
+    await loadPokemon(0, 500)
+  }
+})
+
 const newButton = document.createElement("button");
 newButton.textContent = "New Pokemon";
 newButton.className = 'newButton'
-const header = document.querySelector("header");
 header.appendChild(newButton);
 newButton.addEventListener("click", () => {
   const pokeName = prompt("Choose a name for your new pokemon", "Newmon");
@@ -89,22 +120,7 @@ function makeTypeArray(commaString) {
   });
 }
 
-const pokeGird = document.querySelector(".pokeGrid");
 
-function populatePokeCard(pokemon) {
-  const pokeScene = document.createElement("div");
-  pokeScene.className = "scene";
-  const pokeCard = document.createElement("div");
-  pokeCard.className = "card";
-  pokeCard.addEventListener("click", () =>
-    pokeCard.classList.toggle("is-flipped")
-  );
-
-  pokeCard.appendChild(populateCardFront(pokemon));
-  pokeCard.appendChild(populateCardBack(pokemon));
-  pokeScene.appendChild(pokeCard);
-  pokeGird.appendChild(pokeScene);
-}
 
 function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
@@ -335,7 +351,21 @@ return icon
 
 
 
-await loadPokemon(0, 151);
-
 function getPokemonByType(type1) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type1)};
+
+  const typeSelector = document.querySelector('#type-select')
+  typeSelector.addEventListener('change', (event) => {
+    removeChildren(pokeGrid)
+    const usersTypeChoice = event.target.value.toLowerCase()
+    if (event.target.value === 'Show All Pokemon') {
+      loadedPokemon.forEach((singleLoadedPokemon) =>
+        populatePokeCard(singleLoadedPokemon),
+      )
+    } else {
+  const pokemonByType = getPokemonByType(usersTypeChoice)
+  pokemonByType.forEach((eachSinglePokemon) =>
+    populatePokeCard(eachSinglePokemon),
+      )
+    }
+})
