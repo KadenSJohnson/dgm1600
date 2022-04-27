@@ -71,6 +71,7 @@ loadButton.addEventListener('click', async () => {
   if (loadedPokemon.length === 0) {
     removeChildren(pokeGrid)
     await loadPokemon(0, 500)
+    //make button for each generation 
   }
 })
 
