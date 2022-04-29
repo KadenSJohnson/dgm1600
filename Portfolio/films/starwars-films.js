@@ -26,7 +26,7 @@ figImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg
 
 figCaption.textContent = films[i].title
 
-additionalInfo.innerHTML =  `<h3>Director ${films[i].director},<br> Producer ${films[i].producer} <br> Release Date ${films[i].release_date}</h3>`
+additionalInfo.innerHTML =  `<h3>Director:  ${films[i].director},<br> Producer:  ${films[i].producer} <br> Release Date:  ${films[i].release_date}</h3>`
 figure.addEventListener('click', function() {
     const infostuff = document.getElementsByClassName("info");
     if (infostuff.style.display === none) {
