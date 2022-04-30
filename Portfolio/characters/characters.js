@@ -51,7 +51,7 @@ function populateDOM(characters) {
 
     personImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
     const personCap = document.createElement('figcaption')
-    personCap.textContent = person.name
+    personCap.innerHTML = `Name: ${person.name} <br> Birth Year:  ${person.birth_year}`
 
     personFig.appendChild(personImg)
     personFig.appendChild(personCap)
