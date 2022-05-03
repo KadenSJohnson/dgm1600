@@ -126,6 +126,9 @@ function makeTypeArray(commaString) {
 function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
   pokeFront.className = "cardFace front";
+  const pokeIdFront = document.createElement("h4")
+  pokeIdFront.className = "pokeidfront"
+  pokeIdFront.innerHTML = pokemon.id
   const typeicon = document.createElement('img')
   typeicon.className = "typeicon"
   const pokeType1 = pokemon.types[0].type.name
@@ -150,10 +153,10 @@ function populateCardFront(pokemon) {
     pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
   }
   const pokeCaption = document.createElement("figcaption");
-  pokeCaption.innerHTML = `${pokemon.name} <br> ${pokemon.id}`;
+  pokeCaption.innerHTML = `${pokemon.name}`;
   pokeCaption.className = 'pokecaption'
 
-  
+  pokeFront.appendChild(pokeIdFront)
   pokeFront.appendChild(pokeImg);
   pokeFront.appendChild(pokeCaption);
   pokeFront.appendChild(iconsection);

@@ -216,20 +216,22 @@ h4 {
     font-weight: 9rem;
 }
 
-.pokecaption {
-    line-height: 1rem;
+.pokeidfront {
+    text-align: right;
+    margin-right: 0.5rem;
+    height: 16px;
 }
 
 .typeicon {
     width: 30px;
     height: 30px;
-    margin: 0rem .3rem;
+    margin: 0 .3rem;
 }
 
 .sprite {
     width: 45px;
     height: auto;
-    margin: -0.5rem .3rem;
+    margin-top: -.5rem;
 }
 
 .iconsection {
