@@ -45,6 +45,19 @@
     object-fit: fill;
     width: 80vw;
     height: auto;
+    animation: append-animate 1s ease-in-out;
+}
+
+@keyframes append-animate {
+	from {
+		
+        transform: translateX(-10px);
+		opacity: 0;
+	}
+	to {
+        transform: translateX(10px);
+		opacity: 1;	
+	}
 }
 
 .navships {

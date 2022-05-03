@@ -22,7 +22,6 @@ closeBackGround.addEventListener('click', () => {
 function populateNav() {
     starships.forEach((starship) => {
         let anchor = document.createElement('a')
-        anchor.href = '#'
         anchor.textContent = starship.name
         const listItem = document.createElement('li')
         
