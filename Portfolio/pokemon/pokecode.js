@@ -70,8 +70,8 @@ header.appendChild(loadButton)
 loadButton.addEventListener('click', async () => {
   if (loadedPokemon.length === 0) {
     removeChildren(pokeGrid)
-    await loadPokemon(0, 500)
-    //make button for each generation 
+    await loadPokemon(0, 386)
+    
   }
 })
 
@@ -150,7 +150,8 @@ function populateCardFront(pokemon) {
     pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
   }
   const pokeCaption = document.createElement("figcaption");
-  pokeCaption.innerHTML = pokemon.name;
+  pokeCaption.innerHTML = `${pokemon.name} <br> ${pokemon.id}`;
+  pokeCaption.className = 'pokecaption'
 
   
   pokeFront.appendChild(pokeImg);
