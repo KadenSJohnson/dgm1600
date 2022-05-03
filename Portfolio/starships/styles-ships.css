@@ -162,7 +162,7 @@ footer {
 
 @keyframes modalbox {
     from {
-        transform: translateY(-100vh);
+        transform: translateY(-20vh);
     }
     to {
         transform: translate(1);
