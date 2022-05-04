@@ -26,6 +26,7 @@ header {
 .senatorsDiv {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .senatorsDiv figure {
