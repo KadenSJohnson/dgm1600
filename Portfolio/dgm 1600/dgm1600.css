@@ -1,0 +1,70 @@
+:root {
+    --main-green: #3C4940;
+    --main-white: #DEE1E4;
+    --main-grey: #DEE1E4;
+    --main-black: #111A19;
+    --main-darkGreen: #1C221E;
+}
+
+figure img {
+    width: 50%;
+    height: auto;
+}
+
+#projects {
+    background-color: var(--main-white);
+    text-align: center;
+    font-size: 3vh;
+    margin-top: 65px;
+}
+
+.project-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#projects a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+#projects h2 {
+    padding: 25px 0px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--main-green);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navlist :hover{
+    background-color: var(--main-darkGreen);
+}
+
+.navlist a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--main-white);
+    font-size: large;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    padding: 1.5rem;
+}

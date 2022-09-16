@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,600;0,700;1,200&display=swap" rel="stylesheet">
 
-    <link id="light" rel="stylesheet" href="styles.css">
+    <link id="light" rel="stylesheet" href="styles.css" scoped>
 </head>
 <body>
     <nav id="navbar">
@@ -24,9 +24,7 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div>
-            <button id="darkmodetoggle" class="darkmodetoggle">Dark Mode</button>
-        </div>
+        
     </nav>
     <section id="welcome-section">
         <h1>Welcome</h1>
@@ -35,40 +33,18 @@
 
     <section id="projects">
         <h2>My Projects</h1>
-            <div class="project-tiles">
-
-       <a href="films/index.html"><figure class="project-tile">
-            <img src="https://i.etsystatic.com/21416102/r/il/569458/2114899237/il_fullxfull.2114899237_ryxq.jpg" alt="Star Wars Movie Poster">
-            <figcaption>Star Wars Films</figcaption>
-        </figure></a>
-
-        <a href="characters/index.html"><figure class="project-tile">
-            <img src="images/starwars characters.png" alt="lego starwars characters">
-            <figcaption>Star Wars Characters</figcaption>
-        </figure></a>
-
-        <a href="starships/index.html"><figure class="project-tile">
-            <img src="images/starwars_ship_thumbnail.jpeg" alt="">
-            <figcaption>StarWars StarShips</figcaption>
-        </figure></a>
-
-        <a href="congress/index.html"><figure class="project-tile">
-            <img src="images/congress_building.jpg" alt="">
-            <figcaption>The Members Of Congress</figcaption>
-        </figure></a>
-
-        <a href="pokemon/index.html"><figure class="project-tile">
-            <img src="images/pokeballthumnail.png" alt="">
-            <figcaption>Pokemon Pokedex</figcaption>
-        </figure></a>
-
-        <a href="#/"><figure class="project-tile">
-            <img src="images/still_working.png" alt="">
-            <figcaption>Project comming soon</figcaption>
-        </figure></a>
-    </div>
+            <div class="projects_images">
+            <a href="dgm 1600/index.html">
+                <img src="https://i.etsystatic.com/21416102/r/il/569458/2114899237/il_fullxfull.2114899237_ryxq.jpg" alt="Star Wars Movie Poster">
+            </a>
+            <a href="dgm 1600/index.html">
+                <img src="https://images.unsplash.com/photo-1557853197-aefb550b6fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGNvZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Star Wars Movie Poster">
+            </a>
+        </div>
     </section>
-    <section id="contact">
+    
+    <footer> 
+        <section id="contact">
         <h1>Get a hold of me and get to know me</h1> 
         <div class="contact-links">
             <a id="profile-link" class="contact-details" href="https://github.com/KadenSJohnson" target="_blank">
@@ -88,7 +64,6 @@
             </a>
         </div>
     </section>
-    <footer>This is a practice portfolio all the projects are made for educational purposes</footer>
-    <script src="utils/darkmode.js" type="module"></script>
+</footer>
 </body>
 </html>

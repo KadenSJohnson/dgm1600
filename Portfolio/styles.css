@@ -7,15 +7,6 @@
     --main-darkGreen: #1C221E;
 }
 
-.darkmode {
-    --main-green: rgb(132, 154, 140);
-    --main-white: #121212;
-    --main-grey: #313335;
-    --main-black: #B0BFB5;
-    --main-darkGreen: #BCC8C0;
-    color: rgba(176, 191, 181, .5);
-  }
-  
   
 
 * {
@@ -30,14 +21,6 @@ html {
     
 }
 
-
-
-#projects a {
-    text-decoration: none;
-    color: var(--main-white);
-}
-
-
 #navbar {
     display: flex;
     justify-content: flex-end;
@@ -48,16 +31,6 @@ html {
     z-index: 100;
 }
 
-.darkmodetoggle {
-    width: 50px;
-    height: 50px;
-    margin: 1rem;
-    background-color: var(--main-grey);
-    color: var(--main-black);
-    border-radius: 20px;
-    border: none;
-    font-weight: 600;
-}
 
 .navlist :hover{
     background-color: var(--main-darkGreen);
@@ -67,7 +40,7 @@ html {
     list-style: none;
     text-decoration: none;
     color: var(--main-white);
-    font-size: large;
+    font-size: 16px;
 }
 
 ul {
@@ -96,23 +69,32 @@ li {
 
 #projects {
     background-color: var(--main-white);
+}
+
+#projects h2 {
     text-align: center;
     font-size: 3vh;
 }
 
-.project-tiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+#projects a {
+    height: fit-content;
+    width: 45%;
 }
 
-#contact {
-    background-color: var(--main-white);
+#projects img {
+    width: 100%;
+    height: auto;
+}
+
+.projects_images {
+    column-count: 2;
+    display: flex;
+    justify-content: space-around;
 }
 
 #contact a {
     text-decoration: none;
-    color: var(--main-black);
+    color: #fff;
 }
 
 #contact h1 {
@@ -121,28 +103,6 @@ li {
 }
 
 
-figure {
-    margin: 2rem;
-}
-
-figure img {
-    width: 30rem;
-    border-radius: 10px;
-    height: 30rem;
-}
-
-figcaption {
-    text-align: center;
-    border-radius: 10px;
-    background-color: var(--main-green);
-    position: relative;
-    top: -2.5rem;
-    
-}
-
-figcaption:hover {
-    background-color:var(--main-darkGreen);
-}
 
 footer {
     padding: 2rem; 
@@ -162,7 +122,7 @@ footer {
 }
 
 .contact-details:hover {
-    transform: translateY(8px);
+    transform: translateY(-8px);
 }
 
 #contact h1 {
@@ -172,4 +132,4 @@ footer {
 
 @media (max-width: 75em) {
     html {
-      font-size: 80%; }
+      font-size: 80%; }}
